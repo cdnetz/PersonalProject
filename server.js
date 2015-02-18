@@ -5,6 +5,7 @@ var BodyParser = require('body-parser');
 var Mongoose = rquire('mongoose');
 var Passport = require('passport');
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+var UserCtrl = require('/library/controllers/usercontroller');
 
 // port stuff ========================
 
@@ -18,9 +19,8 @@ App.use(BodyParser.json());
 
 // login =============================
 
-var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 
-passport.use(new GoogleStrategy({
+Passport.use(new GoogleStrategy({
     clientID: '15633526252-k41h1n8kai6ol4f45q6jf6ita2t4j6hp.apps.googleusercontent.com',
     clientSecret: 'TFBdCid8fjizjWK-HRkbfqIO',
     callbackURL: "http://127.0.0.1:3000/auth/google/callback"
@@ -34,11 +34,10 @@ passport.use(new GoogleStrategy({
 
 //authentications ====================
 
-app.get('/auth/google',
-  passport.authenticate('google'));
+App.get('/auth/google', passport.authenticate('google'));
 
-app.get('/auth/google/callback', 
-  passport.authenticate('google', { failureRedirect: '/login' }),
+App.get('/auth/google/callback', passport.authenticate('google', 
+	{ failureRedirect: '/login' }),
   function(req, res) {
     // Successful authentication, redirect home.
     res.redirect('/');

@@ -8,7 +8,8 @@
     "express": "^4.11.2",
     "mongoose": "^3.8.23",
     "passport": "^0.2.1",
-    "passport-google-oauth": "^0.1.5"
+    "passport-google-oauth": "^0.1.5",
+    "q": "^1.1.2"
   },
   "devDependencies": {},
   "scripts": {
