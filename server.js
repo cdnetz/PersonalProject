@@ -2,10 +2,10 @@
 var Express = require('express');
 var App = Express();
 var BodyParser = require('body-parser');
-var Mongoose = rquire('mongoose');
+var Mongoose = require('mongoose');
 var Passport = require('passport');
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
-var UserCtrl = require('/library/controllers/usercontroller');
+// var UserCtrl = require('/library/controllers/usercontroller');
 
 // port stuff ========================
 
@@ -34,9 +34,9 @@ Passport.use(new GoogleStrategy({
 
 //authentications ====================
 
-App.get('/auth/google', passport.authenticate('google'));
+App.get('/auth/google', Passport.authenticate('google'));
 
-App.get('/auth/google/callback', passport.authenticate('google', 
+App.get('/auth/google/callback', Passport.authenticate('google', 
 	{ failureRedirect: '/login' }),
   function(req, res) {
     // Successful authentication, redirect home.

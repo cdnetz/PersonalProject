@@ -1,0 +1,86 @@
+body, html {
+	margin: 0;
+	width: 100%;
+	font-family: sans-serif;
+
+}
+
+.top-bar{
+	width: 100%;
+	height: 60px;
+	background: rgba(55, 140, 205, 0.9);
+	text-align: center;
+	padding: 3px;
+}
+
+.login-box{
+	width: 325px;
+	height: 350px;
+	margin: auto;
+	/*position: relative;*/
+	margin-top: 5%;
+
+	-webkit-animation: backAnimation 2s;
+	animation: backAnimation 2s;
+	-webkit-animation-fill-mode: forwards; 
+	animation-fill-mode: forwards;  
+
+}
+
+.login-box-top{
+	width: 100%;
+	height: 30px;
+	background: rgba(255,255,255, 0.5);
+	position: relative;
+	text-align: center;
+	padding-top: 8px;
+
+}
+
+.customBtn {
+    display: inline-block;
+    
+    color: white;
+    width: 165px;
+    border-radius: 5px;
+    white-space: nowrap;
+    margin: 25%;
+    -webkit-animation: buttonAnimation 2s;
+    animation: buttonAnimation 2s;
+    -webkit-animation-fill-mode: forwards; 
+	animation-fill-mode: forwards;
+}
+
+
+span.icon {
+    background: url('https://onecaringteam.com/assets/google-plus-icon-761c24624eed5f3604aa22f96938aa83.png') transparent 5px 50% no-repeat;
+    display: inline-block;
+    vertical-align: middle;
+    width: 35px;
+    height: 35px;
+    border-right: #bb3f30 1px solid;
+}
+
+@-webkit-keyframes backAnimation {
+	from {background: rgba(182, 182, 182, 0.2);}
+	to {background: rgba(182, 182, 182, 0.9);}
+}
+
+@keyframes backAnimation {
+	from {background: rgba(182, 182, 182, 0.2);}
+	to {background: rgba(182, 182, 182, 0.9);}
+}
+
+@-webkit-keyframes buttonAnimation {
+	from {background: rgba(221, 75, 57, 0.2);}
+	to {background: rgba(221, 75, 57, 0.9);}
+}
+
+@keyframes buttonAnimation {
+	from {background: rgba(221, 75, 57, 0.2);}
+	to {background: rgba(221, 75, 57, 0.9);}
+}
+
+.customBtn:hover {
+    background: #e74b37;
+}
