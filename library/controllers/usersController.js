@@ -1,43 +1,28 @@
-var User = require('./../models/userModel');
+var User = require('./../models/usersModel');
 var Q = require('q');
 
 module.exports = {
-	createLogin: function (user) {
-		console.log(user);
+	findOrCreate: function (googleProfile) {
+		console.log(googleProfile);
 		var dfd = Q.defer();
-		User.findOne({ googleId: user.id} function (err, result) {
-			
-			if (result) {
-				User.update({ _id: result._id}, {
-					name: user.displayName,
-					plusLink: user._json.link,
-					picture: user._json.picutre
-				}, function(err, result){
-					if(err) {
-						return dfd.reject(err);
-					} else {
-						dfd.resolve(result);
-					}
-				})
+		var queryObject = {googleId: googleProfile.id};
+		var updateObject = {
+					name: googleProfile.displayName,
+					googleId: googleProfile.id,
+					plusLink: googleProfile._json.link,
+					picture: googleProfile._json.picture
+				};
+		var optionsObject = {
+				upsert: true
+		};
+		User.findOneAndUpdate(queryObject, updateObject, optionsObject, function (err, result) {
+			if (err) {
+				dfd.reject(err);
 			} else {
-				User.create({
-					googleId: user.id,
-					name: user.displayName,
-					plusLink: user._json.link,
-					picutre: user._json,picture
-				}, function(err, result){
-					if(err){
-						return dfd.reject(err);
-					} else {
-						deferred.resolve(results);
-					}
-				})
-			}
-
-			if(err){
-				return dfd.reject(err);
+				dfd.resolve(result);
 			}
 		})
+		return dfd.promise;
 	}	
-	return dfd.promise;
+	
 }
