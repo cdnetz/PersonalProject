@@ -6,17 +6,20 @@ app.config(function ($routeProvider) {
 			templateUrl: 'app/templates/login.html',
 			controller: 'loginCtrl'
 		})
-		.when('/prefernces', {
-			templateUrl: './../templates/prefernces.html',
-			controller: './../controllers/preferncesCtrl'
+		.when('/preferences', {
+			templateUrl: 'app/templates/preferences.html',
+			controller: 'preferencesCtrl'
+			// resolve: {
+				//route params 
+			// }
 		})
-		.when('/time', {
-			templateUrl: './../templates/prefernces.html',
-			controller: './../controllers/timeCtrl'
+		.when('/:perference/time', {
+			templateUrl: 'app/templates/time.html',
+			controller: 'timeCtrl'
 		})
-		.when('/results', {
-			templateUrl: './../templates/results.html',
-			controller: './../controllers/resultsCtrl'
+		.when('/:preference/:time/results', {
+			templateUrl: 'app/templates/results.html',
+			controller: 'resultsCtrl'
 		})
 		.otherwise('/');
 })

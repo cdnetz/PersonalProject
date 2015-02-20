@@ -1,7 +1,7 @@
 body, html {
 	margin: 0;
 	width: 100%;
-	font-family: sans-serif;
+	font-family: 'Open Sans', sans-serif;
 
 }
 
@@ -24,6 +24,10 @@ body, html {
 	animation: backAnimation 2s;
 	-webkit-animation-fill-mode: forwards; 
 	animation-fill-mode: forwards;  
+
+}
+
+.login-box, .preferences{
 
 }
 
@@ -61,6 +65,17 @@ span.icon {
     height: 35px;
     border-right: #bb3f30 1px solid;
     padding: 5px;
+}
+
+.preferences-button{
+	width: 30%;
+	height: 40px;
+	
+	margin: auto;
+	text-align: center;
+	margin-top: 20px;
+	background: rgba(55, 140, 205, 0.9);
+	padding: 5px;
 }
 
 @-webkit-keyframes backAnimation {

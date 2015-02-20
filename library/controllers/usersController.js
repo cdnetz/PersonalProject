@@ -3,19 +3,21 @@ var Q = require('q');
 
 module.exports = {
 	findOrCreate: function (googleProfile) {
-		console.log(googleProfile);
+		// console.log(googleProfile);
+		console.log('getting to findOrCreate');
 		var dfd = Q.defer();
 		var queryObject = {googleId: googleProfile.id};
 		var updateObject = {
-					name: googleProfile.displayName,
-					googleId: googleProfile.id,
-					plusLink: googleProfile._json.link,
-					picture: googleProfile._json.picture
-				};
+				name: googleProfile.displayName,
+				googleId: googleProfile.id,
+				plusLink: googleProfile._json.link,
+				picture: googleProfile._json.picture
+			};
 		var optionsObject = {
 				upsert: true
 		};
 		User.findOneAndUpdate(queryObject, updateObject, optionsObject, function (err, result) {
+			console.log('Inside Mongooses findOneAndUpdate')
 			if (err) {
 				dfd.reject(err);
 			} else {
