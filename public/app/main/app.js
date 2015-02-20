@@ -13,11 +13,11 @@ app.config(function ($routeProvider) {
 				//route params 
 			// }
 		})
-		.when('/:perference/time', {
+		.when('/:preference/time', {
 			templateUrl: 'app/templates/time.html',
 			controller: 'timeCtrl'
 		})
-		.when('/:preference/:time/results', {
+		.when('/:preference/:timeAmt/results', {
 			templateUrl: 'app/templates/results.html',
 			controller: 'resultsCtrl'
 		})
