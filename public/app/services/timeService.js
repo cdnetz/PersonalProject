@@ -1,21 +1,7 @@
 var app = angular.module('personalProject');
 
 app.service('timeService', function ($http, $location) {
-	this.fiveServ = function(preference){
-		switch(preference) {
-			case 'mobile':
-				$location.path('/mobile/five/results');
-				break;
-			case 'outdoors':
-				location.path('/outdoors/five/results');
-				break;
-			case 'tv':
-				location.path('/tv/five/results');
-				break;
-			case 'random':
-				location.path('/random/five/results');
-		}
-	}
+	
 	this.fifteenServ = function(preference) {
 		switch(preference) {
 			case 'mobile':
@@ -62,6 +48,22 @@ app.service('timeService', function ($http, $location) {
 			case 'random':
 				$location.path('/random/sixty/results');
 				break;
+		}
+	}
+
+	this.nintyServ = function(preference){
+		switch(preference) {
+			case 'mobile':
+				$location.path('/mobile/ninty/results');
+				break;
+			case 'outdoors':
+				location.path('/outdoors/ninty/results');
+				break;
+			case 'tv':
+				location.path('/tv/ninty/results');
+				break;
+			case 'random':
+				location.path('/random/ninty/results');
 		}
 	}
 
