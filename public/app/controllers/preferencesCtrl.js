@@ -22,6 +22,9 @@ app.controller('preferencesCtrl', function ($scope, $location) {
 		$location.path('/random/time');
 	}
 
+	$scope.localSearch = function() {
+		$location.path('/preferences/local');
+	}
 
 
 })

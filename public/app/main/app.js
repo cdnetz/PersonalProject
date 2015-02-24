@@ -1,4 +1,6 @@
-var app = angular.module('personalProject', ['ngRoute']);
+var app = angular.module('personalProject', ['ngRoute' , 'geolocation']);
+
+
 
 app.config(function ($routeProvider) {
 	$routeProvider
@@ -8,10 +10,12 @@ app.config(function ($routeProvider) {
 		})
 		.when('/preferences', {
 			templateUrl: 'app/templates/preferences.html',
-			controller: 'preferencesCtrl'
-			// resolve: {
-				//route params 
-			// }
+			controller: 'preferencesCtrl',
+			resolve: { loginRequired: loginRequired }
+		})
+		.when('/preferences/local', {
+			templateUrl: 'app/templates/local.html',
+			controller: 'localHappeningsCtrl'
 		})
 		.when('/:preference/time', {
 			templateUrl: 'app/templates/time.html',

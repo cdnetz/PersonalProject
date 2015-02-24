@@ -2,6 +2,7 @@ body, html {
 	margin: 0;
 	width: 100%;
 	font-family: 'Open Sans', sans-serif;
+	background-image: url('/app/images/peace.jpg');
 
 }
 
@@ -9,12 +10,46 @@ body, html {
 	width: 100%;
 	height: 60px;
 	background: rgba(55, 140, 205, 0.9);
-	
+	display: flex;
+	justify-content: space-between;
 	padding: 3px;
+	
 }
 
+.logo {
+	display: inline-block;
+}
+
+.right-bar{
+	display: inline-block;
+}
+
+.mainText{
+	text-align: center;
+	font-size: 32px;
+	display: inline-block;
+	margin: 0 auto;
+	height: 60px;
+	
+  	
+	
+}
+.mainText, a:link, a:visited{
+	text-decoration: none;
+	color: black;
+}
+
+.mainText:hover {
+	color: blue;
+	-webkit-animation: mainLinkAnimation 1.5s;
+    animation: mainLinkAnimation 1.5s;
+    -webkit-animation-fill-mode: forwards; 
+	animation-fill-mode: forwards;
+}
+
+
 .login-box{
-	width: 325px;
+	width: 40%;
 	height: 350px;
 	margin: auto;
 	/*position: relative;*/
@@ -23,7 +58,7 @@ body, html {
 	-webkit-animation: backAnimation 2s;
 	animation: backAnimation 2s;
 	-webkit-animation-fill-mode: forwards; 
-	animation-fill-mode: forwards;  
+	animation-fill-mode: forwards; 
 
 }
 
@@ -41,15 +76,21 @@ body, html {
 
 }
 
-.customBtn {
+.login-box-bottom{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.google-btn {
     display: inline-block;
     font-size: 12px;
     color: white;
     width: 170px;
     border-radius: 5px;
     white-space: nowrap;
-    margin: 25%;
     
+    margin-top: 50%;
     -webkit-animation: buttonAnimation 2s;
     animation: buttonAnimation 2s;
     -webkit-animation-fill-mode: forwards; 
@@ -68,14 +109,21 @@ span.icon {
 }
 
 .preferences-button{
-	width: 30%;
-	height: 40px;
-	
+	width: 40%;
+	height: 55px;
+	font-size: 14px;
 	margin: auto;
 	text-align: center;
 	margin-top: 20px;
 	background: rgba(55, 140, 205, 0.9);
-	padding: 5px;
+	padding: 8px;
+}
+
+.search-box{
+	width: 45%;
+	height: 35px;
+	font-size: 16px;
+	margin-top: 10%;
 }
 
 @-webkit-keyframes backAnimation {
@@ -98,3 +146,45 @@ span.icon {
 	to {background: rgba(221, 75, 57, 0.9);}
 }
 
+@-webkit-keyframes mainLinkAnimation {
+	from {color: black;}
+	to {color: white;}
+}
+
+@keyframes mainLinkAnimation {
+	from {color: black;}
+	to {color: white;}
+}
+
+@media (max-width: 660px) {
+	.logo{
+		display: none;
+	}
+	.mainText{
+		text-align: left;
+		font-size: 24px;
+	}
+	.login-box{
+		width: 65%;
+	}
+
+}
+
+@media (min-width: 1130px) {
+	.login-box{
+		width: 450px;
+	}
+}
+
+.inline-block-center {
+  text-align: center;
+}
+.inline-block-center div {
+  display: inline-block;
+  text-align: left;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+}

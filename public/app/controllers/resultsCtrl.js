@@ -4,24 +4,34 @@ app.controller('resultsCtrl', function ($scope, $routeParams, resultsService) {
 	$scope.gamesRes = function () {
 		if ($routeParams.preference === 'mobile') {
 			
-			$scope.message = resultsService.gamesResServ($routeParams.timeAmt);
+			var gotBackMobile = resultsService.gamesResServ($routeParams.timeAmt);
+			$scope.message = gotBackMobile.message;
+			$scope.loopThrough = gotBackMobile.gamesArr;
+
 
 		};
 	}
 	$scope.gamesRes();
 	$scope.outdoorsRes = function () {
 		if ($routeParams.preference === 'outdoors') {
-			$scope.message = resultsService.mobileResServ($routeParams.timeAmt);
+			
+			var gotBackOutdoor = resultsService.outdoorResServ($routeParams.timeAmt);
+			$scope.message = gotBackOutdoor.message;
+			$scope.loopThrough = gotBackOutdoor.outdoorArr;
 		}
 	}
 	$scope.tv = function() {
 		if ($routeParams.preference === 'tv') {
-			$scope.message = resultsService.tvResServ($routeParams.timeAmt);
+			var gotBackTV = resultsService.tvResServ($routeParams.timeAmt);
+			$scope.message = gotBackTV.message;
+			$scope.loopThrough = gotBackTV.tvArr;
 		}
 	}
 	$scope.random = function() {
-		if ($routeParams.preference === 'tv') {
-			$scope.message = resultsService.randomResServ($routeParams.timeAmt);
+		if ($routeParams.preference === 'random') {
+			var gotBackRandomWeb = resultsService.randomWebResServ($routeParams.timeAmt);
+			$scope.message = gotBackRandomWeb.message;
+			$scope.loopThrough = gotBackRandomWeb.randomWebArr;
 		}
 	}
 })

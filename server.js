@@ -10,6 +10,7 @@ var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 // require library
 
 var userCtrl = require('./library/controllers/usersController');
+var googlePlacesCtrl = require('./library/controllers/googlePlacesController');
 
 // port stuff ========================
 
@@ -17,6 +18,7 @@ var port = 8015;
 var mongoURI = 'localhost:27017/personal-project';
 
 // middleware  =======================
+
 Passport.serializeUser(function(user, done){
   done(null, user);
 });
@@ -33,7 +35,6 @@ App.use(Passport.initialize());
 App.use(Passport.session());
 
 // login =============================
-
 
 Passport.use(new GoogleStrategy({
     clientID: '15633526252-k41h1n8kai6ol4f45q6jf6ita2t4j6hp.apps.googleusercontent.com',
@@ -64,6 +65,7 @@ App.get('/auth/google/callback', Passport.authenticate('google',
 App.get('/auth/user', function(req, res) {
   return res.json(req.user);
 })
+
 
 // hookins ===========================
 
