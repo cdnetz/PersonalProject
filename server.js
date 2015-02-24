@@ -66,6 +66,9 @@ App.get('/auth/user', function(req, res) {
   return res.json(req.user);
 })
 
+App.post('/places/search', googlePlacesCtrl.search)
+
+
 
 // hookins ===========================
 

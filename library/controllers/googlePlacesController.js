@@ -1,32 +1,26 @@
-var GOOGLE_PLACES_API_KEY = process.env.GOOGLE_PLACES_API_KEY || 'AIzaSyDZKgxx6tkczhKrFzfWnexqMhqe5gMNRDs';
+var GOOGLE_PLACES_API_KEY = process.env.GOOGLE_PLACES_API_KEY || 'AIzaSyAuvOjiyO78lnupaRdLKvAuWnf_LsCGAx8';
 var GOOGLE_PLACES_OUTPUT_FORMAT = "json";
 var GooglePlaces = require("googleplaces")
-var googlePlaces = new GooglePlaces('AIzaSyDZKgxx6tkczhKrFzfWnexqMhqe5gMNRDs', process.env.json);
+var googlePlaces = new GooglePlaces(GOOGLE_PLACES_API_KEY, GOOGLE_PLACES_OUTPUT_FORMAT);
 
 
 
 module.exports = {
 
-	someCallback: function(req, res){
-	var parameters;
+	search: function(req, res){
+	var parameters = req.body;
+	parameters.radius = 300;
 	//*
 	 //* Text search - https://developers.google.com/places/documentation/#TextSearchRequests
 	 // //from front end
-	 // // {
-	 // 	query: "Target",
-	 // 	radius: 50000,
-	 // 	location: {
-	 // 		lat: 40.33,
-	 // 		lng: -111.52
-	 // 	}
-	 // }
-	parameters = {
-	  query: req.body.query
-
-	};
+		
 	googlePlaces.textSearch(parameters, function (error, response) {
-	  if (error) throw error;
-	  console.log(response.results);
+	  if(error){
+	  	res.status(500).json(error)
+	  } else {
+	  	res.status(200).json(response);
+	  }
+
 	});
 	}
 	

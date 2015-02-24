@@ -1,6 +1,9 @@
 var app = angular.module('personalProject');
 
-app.controller('preferencesCtrl', function ($scope, $location) {
+app.controller('preferencesCtrl', function ($scope, $location, loginService) {
+	loginService.updateUser().then(function(user){
+		$scope.user = user;
+	})
 	console.log('test');
 	$scope.mobile = function() {
 		

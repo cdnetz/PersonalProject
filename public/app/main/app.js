@@ -11,7 +11,11 @@ app.config(function ($routeProvider) {
 		.when('/preferences', {
 			templateUrl: 'app/templates/preferences.html',
 			controller: 'preferencesCtrl',
-			resolve: { loginRequired: loginRequired }
+			resolve: { loginRequired: function($location, $q, loginService){
+					console.log('got here');
+					return loginRequired($location, $q, loginService);
+				} 
+			}
 		})
 		.when('/preferences/local', {
 			templateUrl: 'app/templates/local.html',
@@ -26,4 +30,21 @@ app.config(function ($routeProvider) {
 			controller: 'resultsCtrl'
 		})
 		.otherwise('/');
+
+
+var loginRequired = function($location, $q, loginService) {  
+		// var deferred = $q.defer();
+		return loginService.updateUser().then(function(user){
+			console.log(user);
+			if (!user) {
+				alert('please login first');
+				return $location.path('/')
+
+			}
+			else {
+				return true;
+			}
+		})
+
+	}
 })
