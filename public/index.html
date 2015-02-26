@@ -2,27 +2,29 @@
 <html ng-app="personalProject">
 <head>
 	<title>Personal Project</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 <div class="top-bar" ng-controller="mainCtrl">
-	<div class="header-item">
-		<div bounceDir>
-			<img  class="logo" src="app/images/timewaistin.png">
-		</div>
+	<div class="logo-box">
+		
+		<img class="logo" src="app/images/timewaistin.png">
+		
 	</div>
 	<a href="http://localhost:8015/#/"><div class="main-text">
 		Time Wastin'
 	</div></a>
-	<div class="header-item  header-item-right">
+	<div class="header-item-right">
 		Hello  <span ng-show="user.name"> {{user.name}} </span>
-				<a href='/auth/logout'><div ng-show="user.name">Logout</div></a>
-
+				<p>
+					<a href='/auth/logout'><span ng-show="user.name">Logout</span></a>
+				</p>
 	</div>
+
 	
 </div>
+
 
 
  
