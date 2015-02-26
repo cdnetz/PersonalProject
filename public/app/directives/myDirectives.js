@@ -1,14 +1,17 @@
 var app = angular.module('personalProject');
 
-app.directive('displayName', function (loginService) {
-	// return {
-	// 	restrict: E,
-	// 	template: '<div>'+
-	// 				'{{user.name}}'+
-	// 				'<ng-transclude></ng-transclude>'+
-	// 			  '</div>'
-	// 	link: function(scope, element, attrs, controller){
-	// 		scope.user = loginService.getUser();
-	// 	}
-	// }
+app.directive('bounceDir', function () {
+	return {
+		restrict: 'AE',
+		scope: {
+            bounce: '@'
+        },
+		link: function (scope, element) {
+			element.on('mouseenter', function() {
+
+	            element.addClass(scope.bounce);
+	            console.log('in mouseenter');
+	        });
+		}
+	}
 })

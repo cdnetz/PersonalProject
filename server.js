@@ -68,6 +68,7 @@ App.get('/auth/user', function(req, res) {
 
 App.get('/auth/logout', function(req, res){
   req.logout();
+  res.redirect('/');
   
 });
 
