@@ -1,16 +1,10 @@
 var app = angular.module('personalProject');
 
 app.service('localService', function ($http, geolocation, $q) {
-		// this.coords = function() {
-		// 	return geolocation.getLocation().then(function(data){
-		    	
-		// 	    var coordsObj = {
-		// 	       	lat:data.coords.latitude, 
-		// 	       	long:data.coords.longitude
-		// 	    };
-		// 	return coordsObj;
-			   
-		// });
+
+		var searchResults;
+
+//setting the coordinates, giving them and the search terms to Google Places 
 
 		this.search = function(queryString){
 			var dfd = $q.defer();
@@ -27,10 +21,16 @@ app.service('localService', function ($http, geolocation, $q) {
 			    
 			   	$http.post('/places/search', parameters).then(function(response){
 			    	console.log(response.data);
+			    	searchResults = response.data.results;
 			    	dfd.resolve(response.data);
 				})
 			});
 			return dfd.promise;	
 		}
+
+		this.giveData = function(){
+			return searchResults
+		}
+
 });
 

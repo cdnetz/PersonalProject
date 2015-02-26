@@ -14,14 +14,14 @@ module.exports = {
 	 //* Text search - https://developers.google.com/places/documentation/#TextSearchRequests
 	 // //from front end
 		
-	googlePlaces.textSearch(parameters, function (error, response) {
-	  if(error){
-	  	res.status(500).json(error)
-	  } else {
-	  	res.status(200).json(response);
-	  }
+		googlePlaces.textSearch(parameters, function (error, response) {
+		  if(error){
+		  	res.status(500).json(error)
+		  } else {
+		  	res.status(200).json(response);
+		  }
 
-	});
+		});
 	}
 	
 }

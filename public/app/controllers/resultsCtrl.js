@@ -1,6 +1,9 @@
 var app = angular.module('personalProject');
 
 app.controller('resultsCtrl', function ($scope, $routeParams, resultsService) {
+
+//calling the funcitons from the service, and then setting it to the scope for the view to use
+
 	$scope.gamesRes = function () {
 		if ($routeParams.preference === 'mobile') {
 			
@@ -20,6 +23,7 @@ app.controller('resultsCtrl', function ($scope, $routeParams, resultsService) {
 			$scope.loopThrough = gotBackOutdoor.outdoorArr;
 		}
 	}
+	$scope.outdoorsRes();
 	$scope.tv = function() {
 		if ($routeParams.preference === 'tv') {
 			var gotBackTV = resultsService.tvResServ($routeParams.timeAmt);
@@ -27,6 +31,7 @@ app.controller('resultsCtrl', function ($scope, $routeParams, resultsService) {
 			$scope.loopThrough = gotBackTV.tvArr;
 		}
 	}
+	$scope.tv();
 	$scope.random = function() {
 		if ($routeParams.preference === 'random') {
 			var gotBackRandomWeb = resultsService.randomWebResServ($routeParams.timeAmt);
@@ -34,4 +39,5 @@ app.controller('resultsCtrl', function ($scope, $routeParams, resultsService) {
 			$scope.loopThrough = gotBackRandomWeb.randomWebArr;
 		}
 	}
+	$scope.random();
 })

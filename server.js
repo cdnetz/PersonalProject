@@ -66,6 +66,11 @@ App.get('/auth/user', function(req, res) {
   return res.json(req.user);
 })
 
+App.get('/auth/logout', function(req, res){
+  req.logout();
+  
+});
+
 App.post('/places/search', googlePlacesCtrl.search)
 
 

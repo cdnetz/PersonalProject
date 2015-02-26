@@ -57,13 +57,13 @@ app.service('timeService', function ($http, $location) {
 				$location.path('/mobile/ninty/results');
 				break;
 			case 'outdoors':
-				location.path('/outdoors/ninty/results');
+				$location.path('/outdoors/ninty/results');
 				break;
 			case 'tv':
-				location.path('/tv/ninty/results');
+				$location.path('/tv/ninty/results');
 				break;
 			case 'random':
-				location.path('/random/ninty/results');
+				$location.path('/random/ninty/results');
 		}
 	}
 

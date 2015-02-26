@@ -7,15 +7,16 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<div class="top-bar">
-	<div class="logo">
+<div class="top-bar" ng-controller="mainCtrl">
+	<div class="header-item">
 	Logo
 	</div>
-	<a href="http://localhost:8015/#/"><div class="mainText">
+	<a href="http://localhost:8015/#/"><div class="main-text">
 		Time Wastin'
 	</div></a>
-	<div class="right-bar">
-		
+	<div class="header-item  header-item-right">
+		Hello  <span ng-show="user.name"> {{user.name}} </span>
+
 	</div>
 	
 </div>
@@ -36,11 +37,13 @@
 
 <!-- Controllers ============= -->
 
+<script src="app/controllers/mainCtrl.js"></script>
 <script src="app/controllers/loginCtrl.js"></script>
 <script src="app/controllers/preferencesCtrl.js"></script>
 <script src="app/controllers/resultsCtrl.js"></script>
 <script src="app/controllers/timeCtrl.js"></script>
 <script src="app/controllers/localHappeningsCtrl.js"></script>
+<script src="app/controllers/localResultsCtrl.js"></script>
 
 <!-- Services ============= -->
 
@@ -49,7 +52,9 @@
 <script src="app/services/resultsService.js"></script>
 <script src="app/services/localService.js"></script>
 
+<!-- Directives ============= -->
 
+<script src="app/directives/myDirectives.js"></script>
 
 </body>
 </html>

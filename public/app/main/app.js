@@ -6,7 +6,13 @@ app.config(function ($routeProvider) {
 	$routeProvider
 		.when('/', {
 			templateUrl: 'app/templates/login.html',
-			controller: 'loginCtrl'
+			controller: 'loginCtrl',
+			resolve: { redirectIfAuthenticated: function($location, $q, loginService){
+					console.log('in redirectIfAuthenticated');
+					return redirectIfAuthenticated($location, $q, loginService);
+				}
+
+			}
 		})
 		.when('/preferences', {
 			templateUrl: 'app/templates/preferences.html',
@@ -21,6 +27,10 @@ app.config(function ($routeProvider) {
 			templateUrl: 'app/templates/local.html',
 			controller: 'localHappeningsCtrl'
 		})
+		.when('/preferences/local/results', {
+			templateUrl: 'app/templates/localResults.html',
+			controller: 'localResultsCtrl'
+		})
 		.when('/:preference/time', {
 			templateUrl: 'app/templates/time.html',
 			controller: 'timeCtrl'
@@ -31,9 +41,10 @@ app.config(function ($routeProvider) {
 		})
 		.otherwise('/');
 
+//route protection for user that is not logged in
 
-var loginRequired = function($location, $q, loginService) {  
-		// var deferred = $q.defer();
+	var loginRequired = function($location, $q, loginService) {  
+	
 		return loginService.updateUser().then(function(user){
 			console.log(user);
 			if (!user) {
@@ -46,5 +57,15 @@ var loginRequired = function($location, $q, loginService) {
 			}
 		})
 
+	}
+	
+//User hits home and doesn't get redirected to login page if logged in
+
+	var redirectIfAuthenticated = function($location, $q, loginService) {  
+    return loginService.updateUser().then(function(user) {
+			if (user) {
+	        	$location.path('/preferences');
+	        } 
+		})
 	}
 })
