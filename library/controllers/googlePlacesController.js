@@ -10,9 +10,7 @@ module.exports = {
 	search: function(req, res){
 	var parameters = req.body;
 	parameters.radius = 300;
-	//*
-	 //* Text search - https://developers.google.com/places/documentation/#TextSearchRequests
-	 // //from front end
+	
 		
 		googlePlaces.textSearch(parameters, function (error, response) {
 		  if(error){

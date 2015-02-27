@@ -128,10 +128,7 @@ body, html {
     white-space: nowrap;
     
     margin-top: 50%;
-    -webkit-animation: buttonAnimation 2s;
-    animation: buttonAnimation 2s;
-    -webkit-animation-fill-mode: forwards; 
-	animation-fill-mode: forwards;
+    background: #C85041;
 }
 
 
@@ -154,6 +151,14 @@ span.icon {
 	margin-top: 20px;
 	background: rgba(55, 140, 205, 0.9);
 	padding: 8px;
+	
+}
+
+.preferences-button:hover{
+	-webkit-animation: buttonAnimation 1.1s;
+	animation: buttonAnimation 1.1s;
+	-webkit-animation-fill-mode: forwards; 
+	animation-fill-mode: forwards;
 }
 
 .search-box{
@@ -207,7 +212,8 @@ span.icon {
 }
 
 @-webkit-keyframes mainLinkAnimation {
-	
+	from {color: black;}
+	to {color: white;}
 }
 
 @keyframes mainLinkAnimation {
@@ -215,9 +221,19 @@ span.icon {
 	to {color: white;}
 }
 
+@-webkit-keyframes buttonAnimation {
+	from {background: rgba(55, 140, 205, 0.9)}
+	to {background: white;}
+}
+
+@keyframes buttonAnimation {
+	from {background: rgba(55, 140, 205, 0.9)}
+	to {background: white;}
+}
+
 /*media queries */
 
-@media (max-width: 720px) {
+@media (max-width: 730px) {
 	.logo-box{
 		display: none;
 	}
@@ -227,6 +243,10 @@ span.icon {
 	}
 	.login-box{
 		width: 75%;
+
+	}
+	.header-item-right{
+		font-size: 16px;
 	}
 	.results-box{
 		width: 75%;
