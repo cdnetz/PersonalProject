@@ -2,7 +2,7 @@ body, html {
 	margin: 0;
 	width: 100%;
 	font-family: 'Open Sans', sans-serif;
-	background-image: url('/app/images/peace.jpg');
+	background-image: url('/app/images/coffeeshops.jpg');
 
 }
 
@@ -108,6 +108,20 @@ body, html {
 .results-box{
 	width: 40%;
 	height: 275px;
+	padding: 15px;
+	margin-left: 5%;
+	margin-top: 5%;
+	float: left;
+
+
+	-webkit-animation: backAnimation 2s;
+	animation: backAnimation 2s;
+	-webkit-animation-fill-mode: forwards; 
+	animation-fill-mode: forwards; 
+}
+.results-box-time{
+	width: 40%;
+	height: 275px;
 	margin: auto;
 	padding: 15px;
 
@@ -151,6 +165,7 @@ span.icon {
 	margin-top: 20px;
 	background: rgba(55, 140, 205, 0.9);
 	padding: 8px;
+	border: none;
 	
 }
 
@@ -223,17 +238,17 @@ span.icon {
 
 @-webkit-keyframes buttonAnimation {
 	from {background: rgba(55, 140, 205, 0.9)}
-	to {background: white;}
+	to {background: #dbdbdb;}
 }
 
 @keyframes buttonAnimation {
 	from {background: rgba(55, 140, 205, 0.9)}
-	to {background: white;}
+	to {background: #dbdbdb;}
 }
 
 /*media queries */
 
-@media (max-width: 730px) {
+@media (max-width: 800px) {
 	.logo-box{
 		display: none;
 	}
@@ -249,7 +264,8 @@ span.icon {
 		font-size: 16px;
 	}
 	.results-box{
-		width: 75%;
+		width: 85%;
+		margin-right: 5.7%;
 	}
 
 }

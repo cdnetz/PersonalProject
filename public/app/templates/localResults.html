@@ -1,20 +1,21 @@
-<div class="results-box" ng-repeat="items in dataBack">
-	
-		<p>
-			<img src="{{items.icon}}" />
-		</p>
-		<p>
-			{{items.name}}
-		</p>
-		<p>
-			Rating : {{items.rating}} / 5
-		</p>
-		<p>
-			{{items.formatted_address}}
-		</p>
-		<p>
-			Open Now? <span ng-show="items.opening_hours.open_now"> Yes </span>
-					  <span ng-show="!items.opening_hours.open_now"> No </span>
-		</p>
 
-<div>
+	<div class="results-box" ng-repeat="items in dataBack">
+		
+			<p>
+				<img src="{{items.icon}}" />
+			</p>
+			<p>
+				{{items.name}}
+			</p>
+			<p>
+				Rating : {{items.rating}} / 5
+			</p>
+			<p>
+				{{items.formatted_address}}
+			</p>
+			<p>
+				Open Now? <span ng-show="items.opening_hours.open_now"> Yes </span>
+						  <span ng-show="!items.opening_hours.open_now"> No </span>
+			</p>
+
+	</div>
