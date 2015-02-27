@@ -14,7 +14,7 @@ var googlePlacesCtrl = require('./library/controllers/googlePlacesController');
 
 // port stuff ========================
 
-var port = process.env.EXPRESS_PORT || 8015;
+var port = process.env.EXPRESS_PORT || 80;
 var mongoURI = 'localhost:27017/personal-project';
 
 // middleware  =======================
