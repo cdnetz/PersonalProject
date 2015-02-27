@@ -40,7 +40,7 @@ App.use(Passport.session());
 Passport.use(new GoogleStrategy({
     clientID: '15633526252-k41h1n8kai6ol4f45q6jf6ita2t4j6hp.apps.googleusercontent.com',
     clientSecret: 'TFBdCid8fjizjWK-HRkbfqIO',
-    callbackURL: googleCB;
+    callbackURL: googleCB
   },
   function(accessToken, refreshToken, profile, done) {
     userCtrl.findOrCreate(profile).then( function (user) {
