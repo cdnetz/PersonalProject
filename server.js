@@ -16,6 +16,7 @@ var googlePlacesCtrl = require('./library/controllers/googlePlacesController');
 
 var port = process.env.EXPRESS_PORT || 80;
 var mongoURI = 'localhost:27017/personal-project';
+var googleCB =  process.env.GOOGLE_CB ||"http://localhost/auth/google/callback" 
 
 // middleware  =======================
 
@@ -39,7 +40,7 @@ App.use(Passport.session());
 Passport.use(new GoogleStrategy({
     clientID: '15633526252-k41h1n8kai6ol4f45q6jf6ita2t4j6hp.apps.googleusercontent.com',
     clientSecret: 'TFBdCid8fjizjWK-HRkbfqIO',
-    callbackURL: "http://localhost/auth/google/callback"
+    callbackURL: googleCB;
   },
   function(accessToken, refreshToken, profile, done) {
     userCtrl.findOrCreate(profile).then( function (user) {

@@ -248,7 +248,7 @@ span.icon {
 
 /*media queries */
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
 	.logo-box{
 		display: none;
 	}
