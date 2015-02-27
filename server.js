@@ -14,7 +14,7 @@ var googlePlacesCtrl = require('./library/controllers/googlePlacesController');
 
 // port stuff ========================
 
-var port = 8015;
+var port = process.env.EXPRESS_PORT || 8015;
 var mongoURI = 'localhost:27017/personal-project';
 
 // middleware  =======================
@@ -39,7 +39,7 @@ App.use(Passport.session());
 Passport.use(new GoogleStrategy({
     clientID: '15633526252-k41h1n8kai6ol4f45q6jf6ita2t4j6hp.apps.googleusercontent.com',
     clientSecret: 'TFBdCid8fjizjWK-HRkbfqIO',
-    callbackURL: "http://104.131.16.150:" + port + "/auth/google/callback"
+    callbackURL: "http://localhost:" + port + "/auth/google/callback"
   },
   function(accessToken, refreshToken, profile, done) {
     userCtrl.findOrCreate(profile).then( function (user) {
