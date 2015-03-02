@@ -8,7 +8,7 @@ app.config(function ($routeProvider) {
 			templateUrl: 'app/templates/login.html',
 			controller: 'loginCtrl',
 			resolve: { redirectIfAuthenticated: function($location, $q, loginService){
-					console.log('in redirectIfAuthenticated');
+					
 					return redirectIfAuthenticated($location, $q, loginService);
 				}
 
@@ -18,7 +18,7 @@ app.config(function ($routeProvider) {
 			templateUrl: 'app/templates/preferences.html',
 			controller: 'preferencesCtrl',
 			resolve: { loginRequired: function($location, $q, loginService){
-					console.log('got here');
+					
 					return loginRequired($location, $q, loginService);
 				} 
 			}
