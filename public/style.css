@@ -262,7 +262,7 @@ span.icon {
 
 	}
 	.header-item-right{
-		font-size: 16px;
+		font-size: 24px;
 	}
 	.results-box{
 		width: 85%;
@@ -270,8 +270,12 @@ span.icon {
 	}
 	.preferences-button{
 		width: 100%;
-		font-size: 40px;
+		font-size: 50px;
 		height: 200px;
+	}
+	.login-box-top{
+		height: 100px;
+		font-size: 30px;
 	}
 
 
