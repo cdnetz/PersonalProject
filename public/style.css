@@ -257,7 +257,8 @@ span.icon {
 		font-size: 40px;
 	}
 	.login-box{
-		width: 75%;
+		width: 85%;
+		height: 75%;
 
 	}
 	.header-item-right{
@@ -269,9 +270,10 @@ span.icon {
 	}
 	.preferences-button{
 		width: 100%;
-		font-size: 30px;
-		
+		font-size: 40px;
+		height: 200px;
 	}
+
 
 }
 
