@@ -267,6 +267,11 @@ span.icon {
 		width: 85%;
 		margin-right: 5.7%;
 	}
+	.preferences-button{
+		width: 100%;
+		font-size: 30px;
+		
+	}
 
 }
 
