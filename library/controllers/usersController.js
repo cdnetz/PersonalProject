@@ -17,7 +17,7 @@ module.exports = {
 				upsert: true
 		};
 		User.findOneAndUpdate(queryObject, updateObject, optionsObject, function (err, result) {
-			console.log('Inside Mongooses findOneAndUpdate')
+			
 			if (err) {
 				dfd.reject(err);
 			} else {
