@@ -90,5 +90,6 @@ Mongoose.connect(mongoURI, function(){
 
 
 App.listen(port, function () {
+  console.log(process.env);
 	console.log('Listening on port: ' + port);
 });
