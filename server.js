@@ -16,7 +16,7 @@ var googlePlacesCtrl = require('./library/controllers/googlePlacesController');
 
 var port = process.env.EXPRESS_PORT || 80;
 var mongoURI = 'localhost:27017/personal-project';
-var googleCB =  process.env.GOOGLE_CB ||"http://localhost/auth/google/callback" 
+var googleCB =  process.env.GOOGLE_CB || "http://localhost/auth/google/callback"; 
 
 // middleware  =======================
 
@@ -90,5 +90,6 @@ Mongoose.connect(mongoURI, function(){
 
 
 App.listen(port, function () {
+	console.log(process.env);
 	console.log('Listening on port: ' + port);
 });
