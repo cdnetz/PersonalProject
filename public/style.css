@@ -254,7 +254,7 @@ span.icon {
 	}
 	.main-text{
 		text-align: left;
-		font-size: 40px;
+		font-size: 50px;
 	}
 	.login-box{
 		width: 85%;
@@ -275,7 +275,10 @@ span.icon {
 	}
 	.login-box-top{
 		height: 100px;
-		font-size: 30px;
+		font-size: 36px;
+	}
+	.top-bar{
+		height: 200px;
 	}
 
 
