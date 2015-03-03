@@ -124,7 +124,7 @@ body, html {
 	width: 40%;
 	height: 275px;
 	margin: auto;
-	padding: 15px;
+	padding: 25px;
 
 	margin-top: 5%;
 
@@ -276,8 +276,8 @@ span.icon {
 		height: 200px;
 	}
 	.login-box-top{
-		height: 100px;
-		font-size: 36px;
+		height: 110px;
+		font-size: 40px;
 	}
 	.top-bar{
 		height: 225px;
@@ -287,6 +287,7 @@ span.icon {
 		height: 75%;
 		margin: auto;
 		font-size: 50px;
+		margin-top: 20px;
 	}
 	.google-btn {
     	font-size: 30px;
