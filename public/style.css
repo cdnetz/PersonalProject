@@ -255,7 +255,7 @@ span.icon {
 	}
 	.main-text{
 		text-align: left;
-		font-size: 50px;
+		font-size: 60px;
 	}
 	.login-box{
 		width: 85%;
@@ -263,7 +263,7 @@ span.icon {
 
 	}
 	.header-item-right{
-		font-size: 24px;
+		font-size: 40px;
 	}
 	.results-box{
 		width: 85%;
@@ -294,8 +294,8 @@ span.icon {
     width: 600px;
     border-radius: 5px;
     white-space: nowrap;
-    
-    margin-top: 50%;
+    height: 150px;
+    margin-top: 25%;
     background: #C85041;
 }
 	
