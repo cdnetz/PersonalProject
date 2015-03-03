@@ -263,7 +263,7 @@ span.icon {
 
 	}
 	.header-item-right{
-		font-size: 30px;
+		font-size: 34px;
 		width: 30%;
 	}
 	.results-box{
@@ -283,27 +283,23 @@ span.icon {
 		height: 225px;
 	}
 	.results-box-time{
-	width: 85%;
-	height: 75%;
-	margin: auto;
-	font-size: 50px;
+		width: 85%;
+		height: 75%;
+		margin: auto;
+		font-size: 50px;
 	}
 	.google-btn {
-    display: inline-block;
-    font-size: 30px;
-    color: white;
-    width: 600px;
-    border-radius: 5px;
-    white-space: nowrap;
-    height: 150px;
-    margin-top: 25%;
-    margin-bottom: 50%;
-    background: #C85041;
+    	font-size: 30px;
+    	width: 600px;
+    	height: 150px;
+    	margin-top: 25%;
+    	margin-bottom: 50%;
+    
 	}
 	span.icon {
    
-    width: 70px;
-    height: 70px;
+    	width: 70px;
+    	height: 70px;
     
 	}
 	
