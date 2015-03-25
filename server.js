@@ -18,6 +18,7 @@ var port = process.env.EXPRESS_PORT || 80;
 var mongoURI = 'localhost:27017/personal-project';
 var googleCB =  "http://www.timewastin.net/auth/google/callback" 
 
+
 // middleware  =======================
 
 Passport.serializeUser(function(user, done){
@@ -90,6 +91,6 @@ Mongoose.connect(mongoURI, function(){
 
 
 App.listen(port, function () {
-  console.log(process.env);
+ 	console.log(process.env);
 	console.log('Listening on port: ' + port);
 });
