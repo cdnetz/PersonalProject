@@ -16,10 +16,7 @@ var googlePlacesCtrl = require('./library/controllers/googlePlacesController');
 
 var port = process.env.EXPRESS_PORT || 80;
 var mongoURI = 'localhost:27017/personal-project';
-
-
-
-var googleCB = process.env.GOOGLE_CB || "http://www.timewastin.net/auth/google/callback"; 
+var googleCB =  process.env.GOOGLE_CB || "http://www.timewastin.net/auth/google/callback" 
 
 
 // middleware  =======================
@@ -42,8 +39,8 @@ App.use(Passport.session());
 // login =============================
 
 Passport.use(new GoogleStrategy({
-    clientID: '15633526252-k41h1n8kai6ol4f45q6jf6ita2t4j6hp.apps.googleusercontent.com',
-    clientSecret: 'TFBdCid8fjizjWK-HRkbfqIO',
+    clientID: '15633526252-c3nfstdsh0imttecgl795bpff2a60s4n.apps.googleusercontent.com',
+    clientSecret: 'Y17gMgiB_AL6yTDCHFAFS0Gc',
     callbackURL: googleCB
   },
   function(accessToken, refreshToken, profile, done) {
